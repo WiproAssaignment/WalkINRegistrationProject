@@ -17,6 +17,8 @@ class ScanDLTableViewCell: UITableViewCell {
     let imagePicker = UIImagePickerController()
     var delegate: ScanDelegate?
 
+    @IBOutlet weak var frontCopyButton: UIButton!
+    @IBOutlet weak var scanQRCodeButton: UIButton!
     @IBOutlet weak var checkboxButton: UIButton!
     @IBOutlet weak var dashLineImageView: UIImageView!
     @IBOutlet weak var uploadImageView: UIImageView!
@@ -33,6 +35,19 @@ class ScanDLTableViewCell: UITableViewCell {
         uploadImageView.isHidden = true
 
     }
+    
+    func updateUI() {
+        uploadImageView.image = UIImage(named: "")
+        frontCopyImageView.image = UIImage(named: "")
+        self.barcodeImageView.isHidden = false
+        self.scanbarCodeButton.isHidden = false
+        self.cameraButton.isHidden = false
+        self.uploadFrontCopyLabel.isHidden = false
+        frontCopyButton.isHidden = true
+        scanQRCodeButton.isHidden = true
+        checkboxButton.setImage(UIImage.init(systemName: "checkmark.rectangle"), for: .normal)
+
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -47,6 +62,16 @@ class ScanDLTableViewCell: UITableViewCell {
         
     }
     
+    @IBAction func scanQRButtonTapped(_ sender: UIButton) {
+        buttonTag = 0
+        showAlert()
+    }
+    
+    @IBAction func frontCopyButtonTapped(_ sender: UIButton) {
+        buttonTag = 1
+        showAlert()
+
+    }
     func configurePhotos(){
         imagePicker.sourceType = .savedPhotosAlbum
         imagePicker.delegate = self
@@ -134,11 +159,13 @@ extension ScanDLTableViewCell: UIImagePickerControllerDelegate, UINavigationCont
         if let photo = info[.originalImage] as? UIImage {
             
             if buttonTag == 0 {
+                scanQRCodeButton.isHidden = false
                 self.uploadImageView.isHidden = false
                 self.uploadImageView.image = photo
                 self.barcodeImageView.isHidden = true
                 self.scanbarCodeButton.isHidden = true
             } else {
+                frontCopyButton.isHidden = false
                 self.frontCopyImageView.image = photo
                 self.cameraButton.isHidden = true
                 self.uploadFrontCopyLabel.isHidden = true

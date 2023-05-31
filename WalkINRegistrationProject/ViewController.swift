@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var continueButtonView: UIView!
     @IBOutlet weak var registrationContainerView: UIView!
     
     @IBOutlet weak var dropDownContainerView: UIView!
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
         let backButton = UIBarButtonItem(image: UIImage.init(systemName: "arrow.backward.square"), style: .plain, target: self, action: #selector(backButtonTapped))
         let titleLabel = UIBarButtonItem(title: "Add Walk-In Registration", style: .plain, target: self, action: nil)
         self.navigationItem.leftBarButtonItems = [backButton, titleLabel]
-        
+        self.navigationController?.navigationBar.tintColor = .black
     }
     
     @objc func backButtonTapped() {
@@ -84,10 +85,21 @@ class ViewController: UIViewController {
         // Notify Child View Controller
         viewController.removeFromParent()
     }
-
+    
+    func updateUI(index: Int) {
+        if index == 0 || index == 900 || index == 999 {
+            self.continueButtonView.isHidden = false
+        } else {
+            self.continueButtonView.isHidden = true
+        }
+    }
 }
-
+ 
 extension ViewController: DropDownPickerViewdataSelectionDelegate {
+    func segmentsAction(segmentIndex: Int) {
+        self.updateUI(index: segmentIndex)
+    }
+    
     func registrationDropDownData(dataArray: [String]) {
         self.selectedCellIndex = 101
         self.dropDownContainerView.isHidden = false
@@ -98,7 +110,7 @@ extension ViewController: DropDownPickerViewdataSelectionDelegate {
     func registrationCancelButtonTApped() {
         
     }
-    
+     
     func registrationDoneButtonAction(date: Date, index: Int) {
         let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/yy h:mm a"
@@ -109,8 +121,9 @@ extension ViewController: DropDownPickerViewdataSelectionDelegate {
     
     func showThirdView(index: Int) {
         self.registrationTableViewController.updateUI(index: 900)
+        self.updateUI(index: 900)
     }
-    
+     
     func cancelButtonTApped() {
         
     }
@@ -131,7 +144,7 @@ extension ViewController: DropDownPickerViewdataSelectionDelegate {
     }
     
 }
-
+  
 extension ViewController: ShowDropDownSelection {
     func cancelAction() {
         self.remove(asChildViewController: dropDownPickerViewController)

@@ -16,6 +16,7 @@ protocol DropDownPickerViewdataSelectionDelegate: AnyObject {
     func registrationDoneButtonAction(date: Date, index: Int)
 
     func showThirdView(index: Int)
+    func segmentsAction(segmentIndex: Int)
 }
 
 class RegistrationTableViewController: UITableViewController {
@@ -129,23 +130,31 @@ class RegistrationTableViewController: UITableViewController {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTableViewCell", for: indexPath) as! ProfileTableViewCell
             cell.delegate = self
+            cell.selectionStyle = .none
+           
+            
             return cell
 
         } else {
             if segmentsIndex == 0 || segmentsIndex == 999 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "DataTableViewCell", for: indexPath) as! DataTableViewCell
                 cell.delegate = self
+                cell.selectionStyle = .none
                 return cell
 
             } else {
                 if segmentsIndex == 900 {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "RegistrationTableViewCell", for: indexPath) as! RegistrationTableViewCell
                     cell.delegate = self
+                    cell.selectionStyle = .none
+                    cell.updateUI()
                     return cell
 
                 } else {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ScanDLTableViewCell", for: indexPath) as! ScanDLTableViewCell
                     cell.delegate = self
+                    cell.selectionStyle = .none
+                    cell.updateUI()
                     return cell
                 }
 
@@ -199,6 +208,7 @@ extension RegistrationTableViewController: ProfileDelegate {
     
     func segmentsAction(segmentIndex: Int) {
         self.updateUI(index: segmentIndex)
+        self.delegate.segmentsAction(segmentIndex: segmentIndex)
     }
 }
 

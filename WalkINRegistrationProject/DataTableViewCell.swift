@@ -79,6 +79,22 @@ class DataTableViewCell: UITableViewCell {
 
    
     }
+    
+    func updateUI() {
+         emailTF.text =  ""
+         purposeTF.text = ""
+         siteTF.text = ""
+         secondDateTF.text = ""
+         visitorTypeTF.text = ""
+         phoneTF.text = ""
+         remarksTF.text = ""
+         lastNameTF.text = ""
+         firstDateTF.text = ""
+         firstNamrTF.text = ""
+         companyNameTF.text = ""
+         purposeEntryTF.text = ""
+
+    }
       
     func configureBorders(view: UIView) {
         view.layer.cornerRadius = 5.0

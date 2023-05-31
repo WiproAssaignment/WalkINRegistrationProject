@@ -25,13 +25,49 @@
                                     <constraint firstAttribute="height" constant="250" id="xBh-EJ-2fR"/>
                                 </constraints>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAe-qV-dq6">
+                                <rect key="frame" x="0.0" y="720" width="390" height="50"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLh-qA-dzY">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6k-to-Maa">
+                                                <rect key="frame" x="0.0" y="0.0" width="195" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHr-Ka-Gsc">
+                                                <rect key="frame" x="195" y="0.0" width="195" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dLh-qA-dzY" secondAttribute="trailing" id="7m0-pd-k2a"/>
+                                    <constraint firstAttribute="bottom" secondItem="dLh-qA-dzY" secondAttribute="bottom" id="FXd-cs-Xua"/>
+                                    <constraint firstItem="dLh-qA-dzY" firstAttribute="top" secondItem="xAe-qV-dq6" secondAttribute="top" id="Oj5-ed-hrW"/>
+                                    <constraint firstAttribute="height" constant="50" id="Q5w-Fw-vFC"/>
+                                    <constraint firstItem="dLh-qA-dzY" firstAttribute="leading" secondItem="xAe-qV-dq6" secondAttribute="leading" id="pC9-cA-UHd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zf1-CC-A27" secondAttribute="bottom" id="6Kr-Vv-bxc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xAe-qV-dq6" secondAttribute="trailing" id="7bk-iO-EF2"/>
+                            <constraint firstItem="xAe-qV-dq6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8nN-AB-2ZG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zf1-CC-A27" secondAttribute="trailing" id="AGl-qv-nYM"/>
                             <constraint firstItem="9xq-2Z-niQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M5P-Vb-bws"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xAe-qV-dq6" secondAttribute="bottom" constant="40" id="R2Q-GN-vRO"/>
                             <constraint firstItem="Zf1-CC-A27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X9g-JC-kjV"/>
                             <constraint firstItem="Zf1-CC-A27" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YQp-qY-wKz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9xq-2Z-niQ" secondAttribute="bottom" id="e8Y-Zc-OS9"/>
@@ -40,6 +76,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3yM-DM-nvP"/>
                     <connections>
+                        <outlet property="continueButtonView" destination="xAe-qV-dq6" id="mxI-Ki-ojV"/>
                         <outlet property="dropDownContainerView" destination="9xq-2Z-niQ" id="FfL-JZ-DWu"/>
                         <outlet property="registrationContainerView" destination="Zf1-CC-A27" id="ilY-9g-nYU"/>
                     </connections>
@@ -155,11 +192,20 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemMintColor">
             <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

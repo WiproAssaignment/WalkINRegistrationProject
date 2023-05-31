@@ -39,19 +39,28 @@
                                     <action selector="scanBarCodeButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G6l-1r-fzs"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcode" translatesAutoresizingMaskIntoConstraints="NO" id="Dyy-wy-aeh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcode" translatesAutoresizingMaskIntoConstraints="NO" id="Dyy-wy-aeh">
                                 <rect key="frame" x="30" y="25" width="542" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="obc-a4-2js"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c6-Jf-te3">
+                                <rect key="frame" x="0.0" y="0.0" width="602" height="180"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="scanQRButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="XJT-F5-k2H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UUQ-hq-Kfi" firstAttribute="leading" secondItem="aY7-50-Z0M" secondAttribute="leading" id="2Nn-Wf-U2Z"/>
                             <constraint firstAttribute="trailing" secondItem="UUQ-hq-Kfi" secondAttribute="trailing" id="5hO-hy-jBV"/>
                             <constraint firstAttribute="trailing" secondItem="Dyy-wy-aeh" secondAttribute="trailing" constant="30" id="7o8-n3-uP8"/>
+                            <constraint firstItem="5c6-Jf-te3" firstAttribute="leading" secondItem="aY7-50-Z0M" secondAttribute="leading" id="DkB-OL-NWJ"/>
                             <constraint firstItem="Dyy-wy-aeh" firstAttribute="leading" secondItem="aY7-50-Z0M" secondAttribute="leading" constant="30" id="GR7-bU-kjU"/>
+                            <constraint firstAttribute="bottom" secondItem="5c6-Jf-te3" secondAttribute="bottom" id="OhD-XQ-A17"/>
                             <constraint firstItem="RY4-TK-elz" firstAttribute="leading" secondItem="aY7-50-Z0M" secondAttribute="leading" constant="15" id="Pz8-3L-qxP"/>
                             <constraint firstItem="28h-DQ-z3F" firstAttribute="top" secondItem="aY7-50-Z0M" secondAttribute="top" constant="25" id="RV5-jC-xhc"/>
                             <constraint firstItem="Dyy-wy-aeh" firstAttribute="top" secondItem="aY7-50-Z0M" secondAttribute="top" constant="25" id="XVn-nq-fCF"/>
@@ -59,9 +68,11 @@
                             <constraint firstAttribute="height" constant="180" id="aqJ-Gk-Maj"/>
                             <constraint firstAttribute="bottom" secondItem="UUQ-hq-Kfi" secondAttribute="bottom" id="igr-7c-kV4"/>
                             <constraint firstItem="UUQ-hq-Kfi" firstAttribute="top" secondItem="aY7-50-Z0M" secondAttribute="top" id="kYg-dX-ham"/>
+                            <constraint firstItem="5c6-Jf-te3" firstAttribute="top" secondItem="aY7-50-Z0M" secondAttribute="top" id="lFA-Ng-NzS"/>
                             <constraint firstAttribute="trailing" secondItem="RY4-TK-elz" secondAttribute="trailing" constant="15" id="mNe-Xc-oic"/>
                             <constraint firstAttribute="trailing" secondItem="28h-DQ-z3F" secondAttribute="trailing" constant="25" id="sA1-36-0zX"/>
                             <constraint firstItem="28h-DQ-z3F" firstAttribute="leading" secondItem="aY7-50-Z0M" secondAttribute="leading" constant="25" id="sPm-0I-7uM"/>
+                            <constraint firstAttribute="trailing" secondItem="5c6-Jf-te3" secondAttribute="trailing" id="t4P-nt-pem"/>
                             <constraint firstItem="RY4-TK-elz" firstAttribute="top" secondItem="Dyy-wy-aeh" secondAttribute="bottom" constant="10" id="vgo-oZ-Edr"/>
                         </constraints>
                     </view>
@@ -88,28 +99,38 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Front Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVm-jj-ixU">
-                                <rect key="frame" x="15" y="95" width="532" height="21"/>
+                                <rect key="frame" x="227" y="95" width="148" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQm-TT-Cnw">
+                                <rect key="frame" x="0.0" y="0.0" width="602" height="180"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="frontCopyButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="abD-lp-zWF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DMd-aG-NLa" firstAttribute="top" secondItem="tGK-1P-nLK" secondAttribute="top" id="2EC-nk-xFm"/>
                             <constraint firstAttribute="trailing" secondItem="smn-6F-ZSl" secondAttribute="trailing" constant="25" id="6sT-9V-cAy"/>
-                            <constraint firstAttribute="trailing" secondItem="CVm-jj-ixU" secondAttribute="trailing" constant="55" id="EjT-S0-nCb"/>
                             <constraint firstAttribute="bottom" secondItem="DMd-aG-NLa" secondAttribute="bottom" id="GSV-nt-ilC"/>
                             <constraint firstItem="smn-6F-ZSl" firstAttribute="leading" secondItem="tGK-1P-nLK" secondAttribute="leading" constant="25" id="HNm-9f-F8E"/>
+                            <constraint firstItem="kQm-TT-Cnw" firstAttribute="leading" secondItem="tGK-1P-nLK" secondAttribute="leading" id="MGi-t9-B9A"/>
                             <constraint firstAttribute="bottom" secondItem="smn-6F-ZSl" secondAttribute="bottom" constant="25" id="Mfx-72-nTH"/>
+                            <constraint firstAttribute="bottom" secondItem="kQm-TT-Cnw" secondAttribute="bottom" id="Nss-ZP-5kN"/>
                             <constraint firstItem="maV-bv-EWZ" firstAttribute="top" secondItem="tGK-1P-nLK" secondAttribute="top" constant="50" id="Shd-fH-6rY"/>
+                            <constraint firstItem="kQm-TT-Cnw" firstAttribute="top" secondItem="tGK-1P-nLK" secondAttribute="top" id="V8U-Ja-luZ"/>
                             <constraint firstItem="smn-6F-ZSl" firstAttribute="top" secondItem="tGK-1P-nLK" secondAttribute="top" constant="25" id="ZjB-cp-lzO"/>
                             <constraint firstAttribute="trailing" secondItem="DMd-aG-NLa" secondAttribute="trailing" id="cpD-Bk-aYw"/>
                             <constraint firstAttribute="height" constant="180" id="dTB-zf-TuE"/>
                             <constraint firstItem="CVm-jj-ixU" firstAttribute="top" secondItem="maV-bv-EWZ" secondAttribute="bottom" constant="5" id="dXf-lf-zch"/>
+                            <constraint firstItem="CVm-jj-ixU" firstAttribute="centerX" secondItem="maV-bv-EWZ" secondAttribute="centerX" id="ncp-Ta-Vmh"/>
                             <constraint firstItem="maV-bv-EWZ" firstAttribute="centerX" secondItem="tGK-1P-nLK" secondAttribute="centerX" id="pbF-68-M3y"/>
+                            <constraint firstAttribute="trailing" secondItem="kQm-TT-Cnw" secondAttribute="trailing" id="t2N-1B-xPG"/>
                             <constraint firstItem="DMd-aG-NLa" firstAttribute="leading" secondItem="tGK-1P-nLK" secondAttribute="leading" id="tfW-tX-4gs"/>
-                            <constraint firstItem="CVm-jj-ixU" firstAttribute="leading" secondItem="tGK-1P-nLK" secondAttribute="leading" constant="15" id="wIm-s7-nNk"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwn-UD-FoE">
@@ -167,7 +188,9 @@
                 <outlet property="cameraButton" destination="maV-bv-EWZ" id="b1e-Jb-lC5"/>
                 <outlet property="checkboxButton" destination="atG-ZH-B38" id="JwU-dL-EEe"/>
                 <outlet property="dashLineImageView" destination="UUQ-hq-Kfi" id="H9d-li-k6n"/>
+                <outlet property="frontCopyButton" destination="kQm-TT-Cnw" id="dDS-lI-tXv"/>
                 <outlet property="frontCopyImageView" destination="smn-6F-ZSl" id="wDJ-6A-ihV"/>
+                <outlet property="scanQRCodeButton" destination="5c6-Jf-te3" id="etl-J6-Ee4"/>
                 <outlet property="scanbarCodeButton" destination="RY4-TK-elz" id="nWb-2X-WmM"/>
                 <outlet property="uploadFrontCopyLabel" destination="CVm-jj-ixU" id="Lrg-0B-uSs"/>
                 <outlet property="uploadImageView" destination="28h-DQ-z3F" id="zYN-sX-XVE"/>
